@@ -1,0 +1,181 @@
+/* nassauTickets - estilos
+   Fonte: Atkinson Hyperlegible, criada para máxima legibilidade (acessibilidade visual).
+   Cores: azul-marinho e amarelo, em referência à identidade da instituição. */
+
+:root {
+  --marinho: #10265a;
+  --amarelo: #ffd23f;
+  --amarelo-claro: #fff3c4;
+  --papel: #f4f6fb;
+  --branco: #ffffff;
+  --linha: #c9d1e3;
+  --texto: #14213d;
+  --foco: #0b57d0;
+  --erro: #9b1c1c;
+  --sp: #b3261e;
+  --se: #0b6e63;
+  --sg: #1f4fb4;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--texto);
+  font-family: "Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 .5rem; }
+h2 { font-size: 1.4rem; margin: 2rem 0 .75rem; }
+p { max-width: 70ch; }
+
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+
+.so-leitor {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.pular {
+  position: absolute; left: .5rem; top: -4rem; z-index: 10;
+  background: var(--amarelo); color: var(--marinho); padding: .5rem 1rem; font-weight: 700;
+}
+.pular:focus { top: .5rem; }
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 2rem;
+  background: var(--marinho); color: var(--branco);
+  padding: .9rem 1.5rem; border-bottom: 6px solid var(--amarelo);
+}
+.topo :focus-visible { outline-color: var(--amarelo); }
+.marca { font-size: 1.5rem; font-weight: 700; }
+.topo nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; align-items: center; }
+.topo a, .botao-link {
+  color: var(--branco); text-decoration: none; padding: .35rem .1rem;
+  border-bottom: 3px solid transparent; font: inherit; background: none; border-top: 0; border-left: 0; border-right: 0; cursor: pointer;
+}
+.topo a:hover, .botao-link:hover { border-bottom-color: var(--amarelo); }
+.topo a[aria-current="page"] { border-bottom-color: var(--amarelo); font-weight: 700; }
+
+/* ---------- Páginas ---------- */
+main { outline: none; }
+.pagina { max-width: 64rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.pagina-estreita { max-width: 28rem; }
+.pagina-totem { max-width: 46rem; }
+.pagina-larga { max-width: 80rem; }
+.pagina-painel { max-width: 80rem; }
+.subtitulo { font-size: 1.25rem; margin-top: 0; }
+.vazio { color: #4a5568; }
+.dica { font-size: 1rem; color: #4a5568; }
+
+/* ---------- Botões ---------- */
+.botao {
+  font: inherit; font-weight: 700; cursor: pointer;
+  background: var(--branco); color: var(--marinho);
+  border: 2px solid var(--marinho); border-radius: 10px; padding: .7rem 1.2rem; min-height: 2.9rem;
+}
+.botao:hover:not(:disabled) { background: var(--amarelo-claro); }
+.botao-primario { background: var(--marinho); color: var(--branco); }
+.botao-primario:hover:not(:disabled) { background: #0a1a40; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+/* ---------- Avisos ---------- */
+.aviso {
+  border-left: 8px solid var(--marinho); background: var(--branco);
+  padding: .75rem 1rem; margin: 1rem 0; max-width: 70ch;
+}
+.aviso-offline { border-left-color: #8a5a00; background: #fff3d6; }
+.aviso-erro { border-left-color: var(--erro); background: #fde8e8; color: #5f1111; }
+
+/* ---------- Totem ---------- */
+.opcoes { display: grid; gap: 1rem; margin: 1.5rem 0 2rem; }
+.opcao {
+  display: grid; grid-template-columns: 7.5rem 1fr; align-items: stretch; width: 100%;
+  min-height: 7rem; padding: 0; overflow: hidden; text-align: left; cursor: pointer;
+  font: inherit; color: var(--texto); background: var(--branco);
+  border: 2px solid var(--marinho); border-radius: 14px;
+}
+.opcao:hover:not(:disabled) { background: var(--amarelo-claro); }
+.opcao .codigo { display: grid; place-items: center; font-size: 2.4rem; font-weight: 700; color: var(--branco); }
+.opcao .texto { padding: 1rem 1.25rem; align-self: center; }
+.opcao .texto strong { display: block; font-size: 1.7rem; line-height: 1.2; }
+.tipo-SP .codigo { background: var(--sp); }
+.tipo-SE .codigo { background: var(--se); }
+.tipo-SG .codigo { background: var(--sg); }
+
+/* ---------- Senha em formato de ticket ---------- */
+.ticket {
+  --furo: 14px;
+  background: var(--amarelo); color: var(--marinho);
+  padding: 1.25rem 2.25rem; margin: 1rem 0; text-align: center;
+  -webkit-mask:
+    radial-gradient(circle var(--furo) at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--furo) at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle var(--furo) at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--furo) at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
+}
+.ticket p { margin: 0 auto; }
+.ticket-rotulo { font-size: 1.2rem; font-weight: 700; }
+.ticket-numero { font-size: clamp(2.2rem, 7vw, 3.6rem); font-weight: 700; letter-spacing: .02em; line-height: 1.2; }
+.ticket-guiche { font-size: 1.3rem; }
+.ticket-grande { padding: 2.5rem 3rem; }
+.ticket-grande .ticket-rotulo { font-size: 1.8rem; }
+.ticket-grande .ticket-numero { font-size: clamp(3rem, 11vw, 7rem); }
+.ticket-grande .ticket-guiche { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; }
+
+/* ---------- Painel ---------- */
+.painel-corpo { display: grid; grid-template-columns: 3fr 2fr; gap: 2.5rem; align-items: start; margin-bottom: 1.5rem; }
+.lista-chamadas { list-style: none; margin: 0; padding: 0; }
+.lista-chamadas li {
+  display: flex; justify-content: space-between; gap: 1rem; font-size: 1.5rem;
+  padding: .7rem 0; border-bottom: 2px solid var(--linha);
+}
+
+/* ---------- Atendente ---------- */
+.atendente-grade { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.fila-contagem { list-style: none; padding: 0; margin: 0 0 1.25rem; font-size: 1.3rem; }
+.fila-contagem li { padding: .35rem 0; border-bottom: 1px solid var(--linha); }
+.campo-curto { width: 6rem; }
+.acoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+
+/* ---------- Formulários ---------- */
+.formulario { display: grid; gap: .5rem; }
+.formulario .botao { margin-top: 1rem; }
+label { font-weight: 700; display: block; }
+input, select {
+  font: inherit; padding: .6rem .75rem; min-height: 2.9rem;
+  border: 2px solid var(--marinho); border-radius: 8px; background: var(--branco); color: var(--texto);
+}
+.filtros { display: flex; flex-wrap: wrap; gap: .75rem 1rem; align-items: center; margin: 1.5rem 0; }
+
+/* ---------- Relatórios ---------- */
+.indicadores { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; margin: 0; }
+.indicadores > div { background: var(--branco); border: 2px solid var(--linha); border-radius: 12px; padding: .9rem 1.1rem; }
+.indicadores dt { font-size: 1rem; }
+.indicadores dd { margin: 0; font-size: 2rem; font-weight: 700; color: var(--marinho); }
+.tabela-rolagem { overflow-x: auto; background: var(--branco); border: 2px solid var(--linha); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 1rem; }
+th, td { padding: .6rem .8rem; text-align: left; border-bottom: 1px solid var(--linha); white-space: nowrap; }
+thead th { background: var(--marinho); color: var(--branco); }
+tbody th { font-weight: 700; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 52rem) {
+  .painel-corpo, .atendente-grade { grid-template-columns: 1fr; gap: 1.5rem; }
+  .opcao { grid-template-columns: 5rem 1fr; }
+  .opcao .texto strong { font-size: 1.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+@media print {
+  .topo, .filtros, .pular { display: none; }
+  body { background: #fff; }
+}
