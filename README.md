@@ -40,7 +40,7 @@ npm run dev
 | Nome | Matrícula | Papel |
 |--------------------------|-------|--------------|
 |Victor Hugo Araujo de Melo|1912395| Scrum Master |
-|      |           | Documentador |
+|Fabio Alexandre da Silva Junior|1893189| Desenvolvedor |
 |      |           | Documentador |
 |      |           | Desenvolvedor |
 |      |           | Desenvolvedor |
