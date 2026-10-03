@@ -38,8 +38,8 @@ npm run dev
 ## Membros
 
 | Nome | Matrícula | Papel |
-|------|-----------|-------|
-|      |           | Scrum Master |
+|--------------------------|-------|--------------|
+|Victor Hugo Araujo de Melo|1912395| Scrum Master |
 |      |           | Documentador |
 |      |           | Documentador |
 |      |           | Desenvolvedor |
