@@ -41,10 +41,10 @@ npm run dev
 |--------------------------|-------|--------------|
 |Victor Hugo Araujo de Melo|1912395| Scrum Master |
 |Fabio Alexandre da Silva Junior|1893189| Desenvolvedor |
-|      |           | Documentador |
-|      |           | Desenvolvedor |
-|      |           | Desenvolvedor |
-|      |           | Testador |
+|Maria Eduarda da Silva Santos|1929385| Teste qa |
+|Vinícios Gabriel de Moura Barbosa|1694691| Teste qa |
+|Pedro Andrade Cintra de Freitas|1891418| Desenvolvedor |
+|Felipe Rodrigues da Silva|1906859| Documentador |
 
 ## Licença
 Distribuído sob a licença MIT. Veja o arquivo [LICENSE](LICENSE).
